@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>REGEX</title>
+<meta name="description" content="Javascript regular expressions for advanced search and replace.">
+<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0; maximum-scale=1.0, width=device-width">
+<meta name="author" content="Lynn Stanikmas">
+<style>
+* {
+	border:none;
+	outline:none;
+	}
+	
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	background-image: url('images/symphony.png');
+	}
+
+#wrapper{
+	width:100%;
+	font-family: Helvetica, Arial, sans-serif;
+	}
+
+ol, ul {
+	list-style: none;
+	}
+</style>
+</head>
+<html>
+<body>
+
+	<div id="wrapper">
+		<p>Match a string that starts with href= and ends with .html</p>
+		<p>href=([^<]*)[[^"]*.html</p>
+		
+		<p>Match a string that starts with href, contains clientname and ends with html</p>
+		<p>href\b(?![^html]*?![clientname$])([^>]*)></p>
+		
+		<p>Match all instances of href=" not followed by http</p>
+		<p>href="(?!href="]| http)</p>
+		
+		<p>Match all instances of href=" immediately followed by one of the letters in html</p>
+		<p>href="(?!href="]| http)([html$])</p>
+		
+		<p>Match a string href=", then negative lookahead (?![href="]|http) asserting that at that position in the string what immediately follows is not the characters http. Lastly (?=.*html) to assert that the string html must exist somewhere to the right of the match.</p>
+		<p>href="(?![href="]| http)(?=.*html)</p>
+    	</div><!--END wrapper-->
+
+</body>
+</html>
+
