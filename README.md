@@ -1,3 +1,3 @@
-REGEX for advanced search and replace
+REGEX examples for advanced search and replace
 ===================
 These expressions came in handy when searching large quantities of data.
